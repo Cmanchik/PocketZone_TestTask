@@ -53,3 +53,6 @@ TagManager:
   - name: EnvironmentCollider
     uniqueID: 1745287227
     locked: 0
+  - name: Player
+    uniqueID: 2216786581
+    locked: 0
