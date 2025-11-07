@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 3629481201
+    locked: 0
+  - name: Environment
+    uniqueID: 3026396833
+    locked: 0
+  - name: Border
+    uniqueID: 3568540225
+    locked: 0
+  - name: EnvironmentCollider
+    uniqueID: 1745287227
+    locked: 0
