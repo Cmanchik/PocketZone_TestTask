@@ -262,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035183366664045773}
   - component: {fileID: 2035183366664045770}
+  - component: {fileID: 2741518133974888881}
   m_Layer: 0
   m_Name: Makarov
   m_TagString: Untagged
@@ -336,6 +337,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2741518133974888881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035183366664045771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719d066166e5d5849901a2b428950bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_reloadTime: 1
+  m_bulletPrefab: {fileID: 4963983988100326286, guid: b30410c19d9a66c4aaaa2981c4832cca, type: 3}
+  m_gunPoint: {fileID: 6599825392392254532}
 --- !u!1 &2035183367087708777
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,6 +761,7 @@ Transform:
   m_Children:
   - {fileID: 2035183367508221000}
   - {fileID: 2035183366664045773}
+  - {fileID: 6599825392392254532}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -906,3 +923,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3224280212008834602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6599825392392254532}
+  m_Layer: 0
+  m_Name: Gunpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6599825392392254532
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3224280212008834602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.352, y: 0.019, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2035183367558014869}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
