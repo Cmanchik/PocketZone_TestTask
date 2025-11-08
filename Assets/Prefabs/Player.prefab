@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 2035183366664045773}
   - component: {fileID: 2035183366664045770}
   - component: {fileID: 2741518133974888881}
+  - component: {fileID: 875764920068918639}
   m_Layer: 0
   m_Name: Makarov
   m_TagString: Untagged
@@ -352,6 +353,25 @@ MonoBehaviour:
   m_reloadTime: 1
   m_bulletPrefab: {fileID: 4963983988100326286, guid: b30410c19d9a66c4aaaa2981c4832cca, type: 3}
   m_gunPoint: {fileID: 6599825392392254532}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!58 &875764920068918639
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035183366664045771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.96394414
 --- !u!1 &2035183367087708777
 GameObject:
   m_ObjectHideFlags: 0
