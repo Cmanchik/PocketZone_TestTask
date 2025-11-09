@@ -14,6 +14,9 @@ namespace Assets.Scripts.Utility
         [SerializeField]
         private UnityEvent<GameObject> m_Losted;
 
+        [SerializeField]
+        private UnityEvent<GameObject> m_Stayed;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (m_targetLayer.value != (1 << collision.gameObject.layer)) return;
@@ -26,6 +29,13 @@ namespace Assets.Scripts.Utility
             if (m_targetLayer.value != (1 << collision.gameObject.layer)) return;
 
             m_Losted?.Invoke(collision.gameObject);
+        }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            if (m_targetLayer.value != (1 << collision.gameObject.layer)) return;
+
+            m_Stayed?.Invoke(collision.gameObject);
         }
 
 
@@ -48,6 +58,16 @@ namespace Assets.Scripts.Utility
         public void UnsubLostedEvent(UnityAction<GameObject> action)
         {
             m_Losted.RemoveListener(action);
+        }
+
+        public void SubStayedEvent(UnityAction<GameObject> action)
+        {
+            m_Stayed.AddListener(action);
+        }
+
+        public void UnsubStayedEvent(UnityAction<GameObject> action)
+        {
+            m_Stayed.RemoveListener(action);
         }
     }
 }

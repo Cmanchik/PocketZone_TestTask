@@ -33,6 +33,7 @@ namespace Assets.Scripts.Controller
             m_pursuitScanner.SubLostedEvent(m_navigationLogic.OnLostedTarget);
 
             m_attackScanner.SubDetectedEvent((target) => m_weaponLogic.Attack());
+            m_attackScanner.SubStayedEvent((target) => m_weaponLogic.Attack());
         }
 
         private void FixedUpdate()
