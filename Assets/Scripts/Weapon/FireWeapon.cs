@@ -20,7 +20,7 @@ namespace Assets.Scripts.Weapon
 
 
         private List<Transform> m_targets;
-        private bool m_canAttack = true;
+        
 
         private void Awake()
         {
@@ -46,17 +46,10 @@ namespace Assets.Scripts.Weapon
             AbstractMovement bullet = Instantiate(m_bulletPrefab, m_gunPoint.position, Quaternion.Euler(0, 0, angle - 90));
             bullet.Direction = direction;
 
-            Reload().Forget();
+            ReloadAttack().Forget();
         }
 
-        private async UniTaskVoid Reload()
-        {
-            m_canAttack = false;
-
-            await UniTask.WaitForSeconds(m_attackDelay);
-
-            m_canAttack = true;
-        }
+        
 
         private Transform GetNearestTarget()
         {

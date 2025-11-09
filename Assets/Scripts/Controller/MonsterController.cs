@@ -1,6 +1,7 @@
 using Assets.Scripts.Movement;
 using Assets.Scripts.Navigation;
 using Assets.Scripts.Utility;
+using Assets.Scripts.Weapon;
 using UnityEngine;
 
 namespace Assets.Scripts.Controller
@@ -21,12 +22,17 @@ namespace Assets.Scripts.Controller
         [SerializeField]
         private AbstractNavigation m_navigationLogic;
 
-        // Weapon
+        [Space]
+
+        [SerializeField]
+        private AbstractWeapon m_weaponLogic;
 
         private void Start()
         {
             m_pursuitScanner.SubDetectedEvent(m_navigationLogic.OnFindedTarget);
             m_pursuitScanner.SubLostedEvent(m_navigationLogic.OnLostedTarget);
+
+            m_attackScanner.SubDetectedEvent((target) => m_weaponLogic.Attack());
         }
 
         private void FixedUpdate()

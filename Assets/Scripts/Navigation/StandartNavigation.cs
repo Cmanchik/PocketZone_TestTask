@@ -18,7 +18,6 @@ namespace Assets.Scripts.Navigation
 
         public override void OnFindedTarget(GameObject target)
         {
-            Debug.Log("Пимався!");
             m_target = target.GetComponent<Transform>();
             m_state = ENavigationState.Persecution;
         }
