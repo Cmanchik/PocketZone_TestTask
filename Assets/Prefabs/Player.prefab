@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 2035183366664045773}
   - component: {fileID: 2035183366664045770}
   - component: {fileID: 2741518133974888881}
+  - component: {fileID: 2497161388748783503}
   - component: {fileID: 875764920068918639}
   m_Layer: 0
   m_Name: Makarov
@@ -350,12 +351,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719d066166e5d5849901a2b428950bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_reloadTime: 1
+  m_attackDelay: 0.5
   m_bulletPrefab: {fileID: 4963983988100326286, guid: b30410c19d9a66c4aaaa2981c4832cca, type: 3}
   m_gunPoint: {fileID: 6599825392392254532}
-  targetLayer:
+  m_scanner: {fileID: 2497161388748783503}
+--- !u!114 &2497161388748783503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035183366664045771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b94fcf8f0b9b7a4e914e1a64428bdf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_targetLayer:
     serializedVersion: 2
     m_Bits: 128
+  m_Detected:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Losted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &875764920068918639
 CircleCollider2D:
   m_ObjectHideFlags: 0

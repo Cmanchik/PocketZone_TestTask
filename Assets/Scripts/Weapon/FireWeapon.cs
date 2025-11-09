@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Movement;
+using Assets.Scripts.Utility;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,8 @@ namespace Assets.Scripts.Weapon
         [SerializeField]
         private Transform m_gunPoint;
 
-        [Space]
-
         [SerializeField]
-        private LayerMask targetLayer;
+        private Scanner m_enemyScanner;
 
 
         private List<Transform> m_targets;
@@ -26,6 +25,12 @@ namespace Assets.Scripts.Weapon
         private void Awake()
         {
             m_targets = new List<Transform>();
+        }
+
+        private void Start()
+        {
+            m_enemyScanner.SubDetectedEvent((enemy) => m_targets.Add(enemy.GetComponent<Transform>()));
+            m_enemyScanner.UnsubLostedEvent((enemy) => m_targets.Remove(enemy.GetComponent<Transform>()));
         }
 
         public override void Attack()
@@ -47,7 +52,7 @@ namespace Assets.Scripts.Weapon
         {
             m_canAttack = false;
 
-            await UniTask.WaitForSeconds(m_reloadTime);
+            await UniTask.WaitForSeconds(m_attackDelay);
 
             m_canAttack = true;
         }
@@ -58,21 +63,6 @@ namespace Assets.Scripts.Weapon
             if (m_targets.Count == 0) return null;
 
             return m_targets.OrderByDescending(t => Vector2.Distance(t.position, m_gunPoint.position)).First();
-        }
-
-        protected override void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (targetLayer == (targetLayer | (1 << gameObject.layer))) return;
-
-            Debug.Log(collision.gameObject.name);
-            m_targets.Add(collision.GetComponent<Transform>());
-        }
-
-        protected override void OnTriggerExit2D(Collider2D collision)
-        {
-            if (targetLayer == (targetLayer | (1 << gameObject.layer))) return;
-
-            m_targets.Remove(collision.GetComponent<Transform>());
         }
     }
 }
