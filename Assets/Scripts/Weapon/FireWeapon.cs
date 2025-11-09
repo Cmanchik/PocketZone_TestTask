@@ -35,6 +35,7 @@ namespace Assets.Scripts.Weapon
 
         public override void Attack()
         {
+            m_targets.RemoveAll(t => t == null);
             if (m_targets.Count == 0 || !m_canAttack) return;
 
             Transform target = GetNearestTarget();
@@ -59,7 +60,6 @@ namespace Assets.Scripts.Weapon
 
         private Transform GetNearestTarget()
         {
-            m_targets.RemoveAll(t => t == null);
             if (m_targets.Count == 0) return null;
 
             return m_targets.OrderByDescending(t => Vector2.Distance(t.position, m_gunPoint.position)).First();

@@ -16,14 +16,14 @@ namespace Assets.Scripts.Utility
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (m_targetLayer == (m_targetLayer | (1 << collision.gameObject.layer))) return;
+            if (m_targetLayer.value != (1 << collision.gameObject.layer)) return;
 
             m_Detected?.Invoke(collision.gameObject);
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (m_targetLayer == (m_targetLayer | (1 << collision.gameObject.layer))) return;
+            if (m_targetLayer.value != (1 << collision.gameObject.layer)) return;
 
             m_Losted?.Invoke(collision.gameObject);
         }
