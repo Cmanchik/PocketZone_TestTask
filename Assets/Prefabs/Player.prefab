@@ -897,13 +897,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f1b480e06617c4d969764e5d127d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxPoint: 10
+  m_data: {fileID: 11400000, guid: 6376b0bbf77b7f84fbf7d2763a84c892, type: 2}
   m_ChangedHealth:
     m_PersistentCalls:
       m_Calls: []
   m_Deathed:
     m_PersistentCalls:
       m_Calls: []
+  m_savedData: 1
 --- !u!114 &1740498300627162778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f1b480e06617c4d969764e5d127d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxPoint: 5
+  m_data: {fileID: 11400000, guid: e62087990724fb14d9cce113406b36ce, type: 2}
   m_ChangedHealth:
     m_PersistentCalls:
       m_Calls: []
