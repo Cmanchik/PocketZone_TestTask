@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Movement;
-using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Controller
@@ -15,7 +14,7 @@ namespace Assets.Scripts.Controller
 
         private void Update()
         {
-            m_movement.Direction = m_input.Direction;
+            m_movement.Direction = m_input.Direction.normalized;
         }
     }
 }

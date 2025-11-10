@@ -5,6 +5,8 @@ namespace Assets.Scripts.Navigation
     public class StandartNavigation : AbstractNavigation
     {
         [SerializeField]
+        private float m_stopDistance;
+
         private Transform m_startPoint;
 
         private Transform m_target;
@@ -14,6 +16,9 @@ namespace Assets.Scripts.Navigation
         {
             m_state = ENavigationState.Idle;
             m_transform = transform;
+
+            m_startPoint = new GameObject("StartPoint_" + gameObject.name).transform;
+            m_startPoint.position = m_transform.position;
         }
 
         public override void OnFindedTarget(GameObject target)
@@ -38,7 +43,7 @@ namespace Assets.Scripts.Navigation
             
             DirectionToTarget = (m_target.position - m_transform.position).normalized;
 
-            if (DirectionToTarget == Vector2.zero) m_state = ENavigationState.Idle;
+            if (Vector2.Distance(m_target.position, m_transform.position) <= m_stopDistance) m_state = ENavigationState.Idle;
         }
 
         private void Update()
