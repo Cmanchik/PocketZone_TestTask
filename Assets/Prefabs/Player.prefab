@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_attackDelay: 0.5
-  m_bulletPrefab: {fileID: 4963983988100326286, guid: b30410c19d9a66c4aaaa2981c4832cca, type: 3}
+  m_bulletPrefab: {fileID: 4133129810453340829, guid: b30410c19d9a66c4aaaa2981c4832cca, type: 3}
   m_gunPoint: {fileID: 6599825392392254532}
   m_enemyScanner: {fileID: 2497161388748783503}
 --- !u!114 &2497161388748783503
@@ -785,6 +785,7 @@ GameObject:
   - component: {fileID: 1294692039768046336}
   - component: {fileID: 5538635817130976905}
   - component: {fileID: 1356913217167554512}
+  - component: {fileID: 1740498300627162778}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -901,6 +902,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Deathed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1740498300627162778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035183367558014866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be66bebf45ef20044a38abbae4eb1590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_arrayItems: {fileID: 11400000, guid: 3f346a1aa9b2f3c4e995a627d567e0cc, type: 2}
+  m_AddedItem:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &2035183367732079898

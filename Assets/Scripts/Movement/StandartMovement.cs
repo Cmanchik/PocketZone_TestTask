@@ -2,13 +2,11 @@
 
 namespace Assets.Scripts.Movement
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class StandartMovement : AbstractMovement
+    
+    public class StandartMovement : LinearMovement
     {
         [SerializeField]
         private Transform m_rotatableObject;
-
-        private Rigidbody2D m_rb;
 
         private void Start()
         {
@@ -17,7 +15,7 @@ namespace Assets.Scripts.Movement
 
         protected override void Move()
         {
-            m_rb.velocity = Direction * m_speed;
+            base.Move();
             Rotate();
         }
 
