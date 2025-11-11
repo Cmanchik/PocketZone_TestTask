@@ -40,7 +40,6 @@ namespace Assets.Scripts.UI.InventoryWindow.Item
         {
             if (itemStack.ItemData == null)
             {
-                Clear(); 
                 return;
             }
 
@@ -56,7 +55,7 @@ namespace Assets.Scripts.UI.InventoryWindow.Item
         {
             m_icon.sprite = null;
             m_count.text = string.Empty;
-            m_itemStack = null;
+            m_itemStack.Clear();
 
             m_button.interactable = false;
         }
