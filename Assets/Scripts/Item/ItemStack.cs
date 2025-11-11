@@ -7,5 +7,11 @@ namespace Assets.Scripts.Item
     {
         public ItemData ItemData;
         public int Count;
+
+        public void Clear()
+        {
+            Count = 0;
+            ItemData = null;
+        }
     }
 }

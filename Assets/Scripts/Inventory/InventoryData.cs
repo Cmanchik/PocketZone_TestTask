@@ -24,6 +24,12 @@ namespace Assets.Scripts.Inventory
             {
                 if (index < 0 || index >= m_items.Length)
                     throw new IndexOutOfRangeException();
+
+                if (value == null)
+                {
+                    m_items[index] = null;
+                }
+
                 m_items[index] = value;
             }
         }
